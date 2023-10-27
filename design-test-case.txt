@@ -1,0 +1,34 @@
+Question:
+A company is developing a new social product to increase the company revenue. The architecture of the product is using mircro-service. You play as a python testing engineer who is in charge of setuping the testing system for upload service. The upload service is a part of micro-service system. The upload service is used for receving the photo from user end and save them to the database on the server. 
+
+To upload a photo to the server, it must have the following keys:
+1. Must have an unique secret access token
+2. Must have an authentication process
+3. Must have a photo
+4. Must have a upload response
+
+
+You are required to complete the following questions.
+1. Draw a workflow diagram of upload photo service
+2. Design the high-level test scenarios (At least 5 scenarios)
+3. Write the test case for those high-level test scenarios using pytest (At least 5 scenarios). 
+4. (Optional) Wrap your test case code as an test automation job
+
+
+Notes:
+1. There is no limitation on your creation. You can make any assumptions whatever you think.
+
+1. 工作流程
+   开始 --> 验证令牌 --> 身份验证 --> 上传照片 --> 保存到数据库 --> 结束
+2. 测试场景
+ a. 正常上传流程：用户提供唯一访问令牌、通过身份验证、上传照片、接收上传响应。
+ b. 无访问令牌上传：用户未提供访问令牌，应拒绝上传。
+ c. 无身份验证上传：用户未通过身份验证，应拒绝上传。
+ d. 上传无照片：用户提供访问令牌和身份验证，但未上传照片，应拒绝上传。
+ e. 上传照片后未收到响应：用户提供访问令牌、通过身份验证、上传照片，但未收到上传响应。
+ f. 上传照片后未保存到数据库：用户提供访问令牌、通过身份验证、上传照片，但未保存到数据库。
+ g. 上传照片后未收到响应且未保存到数据库：用户提供访问令牌、通过身份验证、上传照片，但未收到上传响应且未保存到数据库。
+3. 见test_design_test_case.py 文件
+
+ 
+ 
